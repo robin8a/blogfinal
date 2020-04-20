@@ -322,3 +322,175 @@ npm install aws-amplify aws-amplify-react
 
 
 ```
+
+# Adding auth
+
+```sh
+amplify add auth
+
+amplify add auth
+Scanning for plugins...
+Plugin scan successful
+Using service: Cognito, provided by: awscloudformation
+ 
+ The current configured provider is Amazon Cognito. 
+ 
+ Do you want to use the default authentication and security configuration? Default configuration
+ Warning: you will not be able to edit these selections. 
+ How do you want users to be able to sign in? Username
+ Do you want to configure advanced settings? No, I am done.
+Successfully added resource blogfinal5aeb482d locally
+
+Some next steps:
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+
+#################################################
+amplify push
+
+amplify push
+✔ Successfully pulled backend environment blogapi from the cloud.
+
+Current Environment: blogapi
+
+| Category | Resource name     | Operation | Provider plugin   |
+| -------- | ----------------- | --------- | ----------------- |
+| Auth     | blogfinal5aeb482d | Create    | awscloudformation |
+| Api      | blogfinal         | No Change | awscloudformation |
+? Are you sure you want to continue? Yes
+⠙ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_IN_PROGRESS apiblogfinal                     AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:43 GMT-0500 (Colombia Standard Time)               
+CREATE_IN_PROGRESS UpdateRolesWithIDPFunctionRole   AWS::IAM::Role             Mon Apr 20 2020 18:48:43 GMT-0500 (Colombia Standard Time)               
+CREATE_IN_PROGRESS authblogfinal5aeb482d            AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:43 GMT-0500 (Colombia Standard Time)               
+UPDATE_IN_PROGRESS amplify-blogfinal-blogapi-163602 AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:38 GMT-0500 (Colombia Standard Time) User Initiated
+⠏ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_IN_PROGRESS amplify-blogfinal-blogapi-163602-apiblogfinal-14FBQTYQU8JTQ AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:44 GMT-0500 (Colombia Standard Time) User Initiated
+⠧ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS authblogfinal5aeb482d          AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:44 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UpdateRolesWithIDPFunctionRole AWS::IAM::Role             Mon Apr 20 2020 18:48:43 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS amplify-blogfinal-blogapi-163602-authblogfinal5aeb482d-1FFY18HSDDK67 AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:44 GMT-0500 (Colombia Standard Time) User Initiated
+⠼ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_IN_PROGRESS Post    AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time) 
+UPDATE_IN_PROGRESS Comment AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time) 
+UPDATE_IN_PROGRESS Like    AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:49 GMT-0500 (Colombia Standard Time) 
+⠏ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS SNSRole AWS::IAM::Role Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS SNSRole AWS::IAM::Role Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time)                            
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE    ConnectionStack AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:54 GMT-0500 (Colombia Standard Time) 
+UPDATE_IN_PROGRESS ConnectionStack AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:53 GMT-0500 (Colombia Standard Time) 
+UPDATE_COMPLETE    Like            AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time) 
+UPDATE_COMPLETE    Post            AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time) 
+UPDATE_COMPLETE    Comment         AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:50 GMT-0500 (Colombia Standard Time) 
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE UpdateRolesWithIDPFunctionRole AWS::IAM::Role Mon Apr 20 2020 18:48:57 GMT-0500 (Colombia Standard Time) 
+⠼ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE    CustomResourcesjson AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:57 GMT-0500 (Colombia Standard Time) 
+UPDATE_IN_PROGRESS CustomResourcesjson AWS::CloudFormation::Stack Mon Apr 20 2020 18:48:56 GMT-0500 (Colombia Standard Time) 
+⠏ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE SNSRole AWS::IAM::Role Mon Apr 20 2020 18:49:03 GMT-0500 (Colombia Standard Time) 
+⠹ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE_CLEANUP_IN_PROGRESS amplify-blogfinal-blogapi-163602-apiblogfinal-14FBQTYQU8JTQ AWS::CloudFormation::Stack Mon Apr 20 2020 18:49:00 GMT-0500 (Colombia Standard Time) 
+⠧ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE apiblogfinal AWS::CloudFormation::Stack Mon Apr 20 2020 18:49:06 GMT-0500 (Colombia Standard Time) 
+⠙ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS UserPool AWS::Cognito::UserPool Mon Apr 20 2020 18:49:08 GMT-0500 (Colombia Standard Time) 
+⠇ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    UserPool AWS::Cognito::UserPool Mon Apr 20 2020 18:49:10 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UserPool AWS::Cognito::UserPool Mon Apr 20 2020 18:49:10 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+⠧ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS UserPoolClient AWS::Cognito::UserPoolClient Mon Apr 20 2020 18:49:14 GMT-0500 (Colombia Standard Time) 
+⠋ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    UserPoolClientWeb AWS::Cognito::UserPoolClient Mon Apr 20 2020 18:49:17 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UserPoolClientWeb AWS::Cognito::UserPoolClient Mon Apr 20 2020 18:49:17 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_COMPLETE    UserPoolClient    AWS::Cognito::UserPoolClient Mon Apr 20 2020 18:49:16 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UserPoolClient    AWS::Cognito::UserPoolClient Mon Apr 20 2020 18:49:16 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UserPoolClientWeb AWS::Cognito::UserPoolClient Mon Apr 20 2020 18:49:15 GMT-0500 (Colombia Standard Time)                            
+⠋ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS UserPoolClientRole AWS::IAM::Role Mon Apr 20 2020 18:49:20 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UserPoolClientRole AWS::IAM::Role Mon Apr 20 2020 18:49:20 GMT-0500 (Colombia Standard Time)                            
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE UserPoolClientRole AWS::IAM::Role Mon Apr 20 2020 18:49:33 GMT-0500 (Colombia Standard Time) 
+⠙ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    UserPoolClientLambda AWS::Lambda::Function Mon Apr 20 2020 18:49:38 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UserPoolClientLambda AWS::Lambda::Function Mon Apr 20 2020 18:49:38 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UserPoolClientLambda AWS::Lambda::Function Mon Apr 20 2020 18:49:37 GMT-0500 (Colombia Standard Time)                            
+⠴ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS UserPoolClientLambdaPolicy AWS::IAM::Policy Mon Apr 20 2020 18:49:44 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UserPoolClientLambdaPolicy AWS::IAM::Policy Mon Apr 20 2020 18:49:43 GMT-0500 (Colombia Standard Time)                            
+⠙ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE UserPoolClientLambdaPolicy AWS::IAM::Policy Mon Apr 20 2020 18:49:54 GMT-0500 (Colombia Standard Time) 
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS UserPoolClientLogPolicy AWS::IAM::Policy Mon Apr 20 2020 18:49:58 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UserPoolClientLogPolicy AWS::IAM::Policy Mon Apr 20 2020 18:49:57 GMT-0500 (Colombia Standard Time)                            
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE UserPoolClientLogPolicy AWS::IAM::Policy Mon Apr 20 2020 18:50:08 GMT-0500 (Colombia Standard Time) 
+⠸ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS UserPoolClientInputs Custom::LambdaCallout Mon Apr 20 2020 18:50:12 GMT-0500 (Colombia Standard Time) 
+⠦ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    UserPoolClientInputs Custom::LambdaCallout Mon Apr 20 2020 18:50:16 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UserPoolClientInputs Custom::LambdaCallout Mon Apr 20 2020 18:50:16 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+⠼ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    IdentityPool AWS::Cognito::IdentityPool Mon Apr 20 2020 18:50:24 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS IdentityPool AWS::Cognito::IdentityPool Mon Apr 20 2020 18:50:23 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS IdentityPool AWS::Cognito::IdentityPool Mon Apr 20 2020 18:50:21 GMT-0500 (Colombia Standard Time)                            
+⠴ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_IN_PROGRESS IdentityPoolRoleMap AWS::Cognito::IdentityPoolRoleAttachment Mon Apr 20 2020 18:50:28 GMT-0500 (Colombia Standard Time) 
+⠧ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    IdentityPoolRoleMap AWS::Cognito::IdentityPoolRoleAttachment Mon Apr 20 2020 18:50:30 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS IdentityPoolRoleMap AWS::Cognito::IdentityPoolRoleAttachment Mon Apr 20 2020 18:50:29 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+⠹ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE amplify-blogfinal-blogapi-163602-authblogfinal5aeb482d-1FFY18HSDDK67 AWS::CloudFormation::Stack Mon Apr 20 2020 18:50:32 GMT-0500 (Colombia Standard Time) 
+⠇ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE authblogfinal5aeb482d AWS::CloudFormation::Stack Mon Apr 20 2020 18:50:39 GMT-0500 (Colombia Standard Time) 
+⠧ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    UpdateRolesWithIDPFunction AWS::Lambda::Function Mon Apr 20 2020 18:50:42 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UpdateRolesWithIDPFunction AWS::Lambda::Function Mon Apr 20 2020 18:50:41 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UpdateRolesWithIDPFunction AWS::Lambda::Function Mon Apr 20 2020 18:50:41 GMT-0500 (Colombia Standard Time)                            
+⠇ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE    UpdateRolesWithIDPFunctionOutputs Custom::LambdaCallout Mon Apr 20 2020 18:50:48 GMT-0500 (Colombia Standard Time)                            
+CREATE_IN_PROGRESS UpdateRolesWithIDPFunctionOutputs Custom::LambdaCallout Mon Apr 20 2020 18:50:48 GMT-0500 (Colombia Standard Time) Resource creation Initiated
+CREATE_IN_PROGRESS UpdateRolesWithIDPFunctionOutputs Custom::LambdaCallout Mon Apr 20 2020 18:50:44 GMT-0500 (Colombia Standard Time)                            
+⠧ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE_CLEANUP_IN_PROGRESS amplify-blogfinal-blogapi-163602 AWS::CloudFormation::Stack Mon Apr 20 2020 18:50:50 GMT-0500 (Colombia Standard Time) 
+⠇ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE amplify-blogfinal-blogapi-163602 AWS::CloudFormation::Stack Mon Apr 20 2020 18:51:03 GMT-0500 (Colombia Standard Time) 
+UPDATE_COMPLETE apiblogfinal                     AWS::CloudFormation::Stack Mon Apr 20 2020 18:51:03 GMT-0500 (Colombia Standard Time) 
+✔ All resources are updated in the cloud
+```
+
