@@ -60,6 +60,19 @@ query listPosts {
   }
 }
 
+mutation createPost{
+  createPost(input:{
+    postBody: "Second post body"
+    postTitle: "Second post title"
+    postOwnerId: "8999hfg"
+    postOwnerUsername: "James Bond"
+  }){
+    id
+    postBody
+    postTitle
+  }
+}
+
 ```
 
 # Start server
