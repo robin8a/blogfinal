@@ -1,72 +1,72 @@
 import React, { Component } from 'react'
+import { API, graphqlOperation } from 'aws-amplify'
 // import { API, graphqlOperation, Auth } from 'aws-amplify'
-// import { createPost } from '../graphql/mutations'
+import { createPost } from '../graphql/mutations'
 
 
 
 
 class CreatePost extends Component {
 
-    // state = {
-    //     postOwnerId: "",
-    //     postOwnerUsername: "",
-    //     postTitle: "",
-    //     postBody: ""
-    // }
+    state = {
+        postOwnerId: "",
+        postOwnerUsername: "",
+        postTitle: "",
+        postBody: ""
+    }
 
-    // componentDidMount = async () => {
-    //    //Todo: Auth
-    //    await Auth.currentUserInfo()
-    //         .then(user => {
-    //             this.setState({
-    //                   postOwnerId: user.attributes.sub,
-    //                   postOwnerUsername: user.username
+    componentDidMount = async () => {
+      //  //Todo: Auth
+      //  await Auth.currentUserInfo()
+      //       .then(user => {
+      //           this.setState({
+      //                 postOwnerId: user.attributes.sub,
+      //                 postOwnerUsername: user.username
 
-    //             })
+      //           })
 
 
     //             // console.log("Curr: User: ", user.username);
     //              //console.log("Attr.Sub: User: ", user.attributes.sub);
                  
-    //         })
-    // }
+            // })
+    }
+
+    // Fillout the Post data when change
+    handleChangePost = event => this.setState({
+      [event.target.name] : event.target.value 
+    })
+
+    handleAddPost = async event => {
+         event.preventDefault();
+
+         const input = {
+              postOwnerId: "paul980",// this.state.postOwnerId,
+              postOwnerUsername: "Paul",//this.state.postOwnerUsername,
+              postTitle: this.state.postTitle,
+              postBody: this.state.postBody,
+              createdAt: new Date().toISOString()
+         }
+
+         await API.graphql(graphqlOperation(createPost, { input }));
+
+         this.setState({ postTitle: "", postBody: ""}); // Clear fields
 
 
-    // handleChangePost = event => this.setState({
-    //      [event.target.name] : event.target.value 
-    //      })
-
-    // handleAddPost = async event => {
-    //      event.preventDefault()
-
-    //      const input = {
-    //           postOwnerId: this.state.postOwnerId,
-    //           postOwnerUsername: this.state.postOwnerUsername,
-    //           postTitle: this.state.postTitle,
-    //           postBody: this.state.postBody,
-    //           createdAt: new Date().toISOString()
-    //      }
-
-    //      await API.graphql(graphqlOperation(createPost, { input }))
-
-    //      this.setState({ postTitle: "", postBody: ""})
-
-
-    // }
+    }
 
 
     render() {
         return (
-            <form className="add-post" 
-            onSubmit={this.handleAddPost} >
+            <form className="add-post" onSubmit={this.handleAddPost} >
 
                 <input style={{ font: '19px'}} 
                   type="text" placeholder="Title"
                   name="postTitle"
                   required
-                //   value={this.state.postTitle}
-                //   onChange={this.handleChangePost}
-                  />
+                  value={this.state.postTitle}
+                  onChange={this.handleChangePost}
+                />
 
                 <textarea 
                   type="text"
@@ -75,9 +75,9 @@ class CreatePost extends Component {
                   cols="40"
                   required
                   placeholder="New Blog Post"
-                //   value={this.state.postBody}
-                //   onChange={this.handleChangePost}
-                  />
+                  value={this.state.postBody}
+                  onChange={this.handleChangePost}
+                />
 
                 <input  type="submit"
                   className="btn"
