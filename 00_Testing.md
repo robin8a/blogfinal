@@ -61,3 +61,9 @@ query listPosts {
 }
 
 ```
+
+# Start server
+```sh
+npm start
+
+```
