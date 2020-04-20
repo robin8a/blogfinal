@@ -313,3 +313,12 @@ CREATE_COMPLETE                     apiblogfinal                     AWS::CloudF
 GraphQL endpoint: https://kux4ajthgjbe7nhyqmrqxesiri.appsync-api.us-east-1.amazonaws.com/graphql
 GraphQL API KEY: da2-5xaa67dew5bhvaee4jko6s4afq
 ```
+
+
+# Installing aws-amplify and aws-amplify-react
+
+```sh
+npm install aws-amplify aws-amplify-react
+
+
+```
