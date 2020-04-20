@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
+// Importing components
 import DisplayPosts from './components/DisplayPost'
+import CreatePosts from './components/CreatePost';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <DisplayPosts/>
-      </header>
+      <CreatePosts/>
+      <DisplayPosts/>
+      
     </div>
   );
 }

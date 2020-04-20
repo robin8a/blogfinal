@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { listPosts } from '../graphql/queries';
 import { API , graphqlOperation } from 'aws-amplify';
+import DeletePost from './DeletePost'
+import EditPost from './EditPost'
 
 class DisplayPosts extends Component {
     state = {
@@ -24,7 +26,7 @@ class DisplayPosts extends Component {
         return posts.map(( post ) => {
 
             return (
-                <div className="posts" key={post.id}>
+                <div className="posts" style={rowStyle} key={post.id}>
                     <h1>{ post.postTitle }</h1>
                     <span style={{ fontStyle: "italic", color: "#0ca5e297"  }}> 
                         { "Wrote by: " } { post.postOwnerUsername}
@@ -39,11 +41,26 @@ class DisplayPosts extends Component {
                     </span>
 
                     <p> { post.postBody }</p>
+                    <br />
+                    <span>
+                        <DeletePost data={post}/>
+                        <EditPost data={post}/>
+                    </span>
+                    
+                        
+                    
                 </div>
             )
 
         })
     }
+}
+
+const rowStyle = {
+    background: '#f4f4f4',
+    padding: '10px',
+    border: '1px #ccc dotted',
+    margin: '14px'
 }
 
 export default DisplayPosts;
