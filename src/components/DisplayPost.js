@@ -4,7 +4,7 @@ import { API , graphqlOperation } from 'aws-amplify';
 import DeletePost from './DeletePost'
 import EditPost from './EditPost'
 // import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment, onCreateLike } from '../graphql/subscriptions'
-import { onCreatePost, onDeletePost, onUpdatePost } from '../graphql/subscriptions'
+import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment } from '../graphql/subscriptions'
 import CreateCommentPost from './CreateCommentPost';
 
 class DisplayPosts extends Component {
@@ -52,6 +52,7 @@ class DisplayPosts extends Component {
 
                 }
         })
+
 
     }
     
@@ -102,8 +103,6 @@ class DisplayPosts extends Component {
                     <span>
                         <CreateCommentPost postId={post.id} />
                     </span>
-                    
-                        
                     
                 </div>
             )

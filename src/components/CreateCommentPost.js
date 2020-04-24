@@ -24,7 +24,6 @@ class CreateCommentPost extends Component {
     }
 
     handleChangeContent = event => this.setState({ content: event.target.value})
-
     handleAddComment = async event => {
           event.preventDefault()
 
