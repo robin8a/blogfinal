@@ -5,6 +5,7 @@ import DeletePost from './DeletePost'
 import EditPost from './EditPost'
 // import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment, onCreateLike } from '../graphql/subscriptions'
 import { onCreatePost, onDeletePost, onUpdatePost } from '../graphql/subscriptions'
+import CreateCommentPost from './CreateCommentPost';
 
 class DisplayPosts extends Component {
     state = {
@@ -96,6 +97,10 @@ class DisplayPosts extends Component {
                     <span>
                         <DeletePost data={post}/>
                         <EditPost {...post}/>
+                    </span>
+
+                    <span>
+                        <CreateCommentPost postId={post.id} />
                     </span>
                     
                         

@@ -55,7 +55,7 @@ class EditPost extends Component {
           postBody: event.target.value}})
     }
 
-    componentWillMount = async () => {
+    componentDidMount = async () => {
 
         await Auth.currentUserInfo()
             .then(user => {
