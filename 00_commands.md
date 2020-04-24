@@ -494,3 +494,15 @@ UPDATE_COMPLETE apiblogfinal                     AWS::CloudFormation::Stack Mon 
 ✔ All resources are updated in the cloud
 ```
 
+# Git use an old commit
+
+
+
+```
+git checkout <old-commit>
+git branch temp-branch
+git checkout master
+git merge temp-branch
+git push origin master
+
+```
