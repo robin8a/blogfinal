@@ -118,12 +118,11 @@ class DisplayPosts extends Component {
                     <span>
                         
                         <CreateCommentPost postId={post.id} />
-                        <p>PostComments: {post.comments.items.length}</p>
-                        {/* { post.comments.items.length > 0 && <span style={{fontSize:"19px", color:"gray"}}>
+                        { post.comments.items.length > 0 && <span style={{fontSize:"19px", color:"gray"}}>
                              Comments: </span>}
                              {
                                   post.comments.items.map((comment, index) => <CommentPost key={index} commentData={comment}/>)
-                             } */}
+                             }
                     </span>
                     
                 </div>
