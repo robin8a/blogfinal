@@ -6,6 +6,7 @@ import EditPost from './EditPost'
 // import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment, onCreateLike } from '../graphql/subscriptions'
 import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment } from '../graphql/subscriptions'
 import CreateCommentPost from './CreateCommentPost';
+import CommentPost from './CommentPost'
 
 class DisplayPosts extends Component {
     state = {
@@ -52,7 +53,21 @@ class DisplayPosts extends Component {
 
                 }
         })
+        
+        this.createPostCommentListener = API.graphql(graphqlOperation(onCreateComment))
+            .subscribe({
+                    next: commentData => {
+                        const createdComment = commentData.value.data.onCreateComment
+                        let posts = [ ...this.state.posts]
 
+                        for (let post of posts ) {
+                            if ( createdComment.post.id === post.id) {
+                                post.comments.items.push(createdComment)
+                            }
+                        }
+                        this.setState({ posts } )
+                    }
+        })
 
     }
     
@@ -61,7 +76,7 @@ class DisplayPosts extends Component {
         this.createPostListener.unsubscribe()
         this.deletePostListener.unsubscribe()
         this.updatePostListener.unsubscribe()
-        // this.createPostCommentListener.unsubscribe()
+        this.createPostCommentListener.unsubscribe()
         // this.createPostLikeListener.unsubscribe()
     }
 
@@ -101,7 +116,14 @@ class DisplayPosts extends Component {
                     </span>
 
                     <span>
+                        
                         <CreateCommentPost postId={post.id} />
+                        <p>PostComments: {post.comments.items.length}</p>
+                        {/* { post.comments.items.length > 0 && <span style={{fontSize:"19px", color:"gray"}}>
+                             Comments: </span>}
+                             {
+                                  post.comments.items.map((comment, index) => <CommentPost key={index} commentData={comment}/>)
+                             } */}
                     </span>
                     
                 </div>
