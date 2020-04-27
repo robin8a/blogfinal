@@ -7,6 +7,7 @@ import EditPost from './EditPost'
 import { onCreatePost, onDeletePost, onUpdatePost, onCreateComment } from '../graphql/subscriptions'
 import CreateCommentPost from './CreateCommentPost';
 import CommentPost from './CommentPost'
+import { FaBeer } from 'react-icons/fa';
 
 class DisplayPosts extends Component {
     state = {
@@ -124,6 +125,8 @@ class DisplayPosts extends Component {
                                   post.comments.items.map((comment, index) => <CommentPost key={index} commentData={comment}/>)
                              }
                     </span>
+
+                    <h3> Lets go for a <FaBeer />? </h3>
                     
                 </div>
             )

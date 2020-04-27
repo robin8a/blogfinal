@@ -506,3 +506,11 @@ git merge temp-branch
 git push origin master
 
 ```
+
+
+# Installing react icons
+
+```sh
+npm install react-icons --save
+
+```
